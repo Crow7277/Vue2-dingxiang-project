@@ -1,7 +1,7 @@
 <template>
     <div class="home">
-        <!-- 1.图片 -->
         <div class="banner">
+            <!-- 图片 -->
             <img src="@/assets/images/1.jpg" style="width: 100%" alt="" />
             <!-- 热点信息 -->
             <HomeCovInfo :covInfo="covInfo" :news="news"></HomeCovInfo>
@@ -32,6 +32,9 @@
                     </router-link>
                 </li>
             </ul>
+
+            <!-- 全国风险 -->
+            <HomeCovNum :covNum="covNum"></HomeCovNum>
         </div>
     </div>
 </template>
@@ -39,13 +42,15 @@
 <script>
 import { getCovInfo } from '@/api/index.js';
 import HomeCovInfo from './Covinfo/CovInfo';
+import HomeCovNum from './CovNum/CovNum.vue';
 export default {
     name: 'Home',
-    components: { HomeCovInfo },
+    components: { HomeCovInfo, HomeCovNum },
     data() {
         return {
             covInfo: {},
             news: [],
+            covNum: {},
         };
     },
     created() {
@@ -67,6 +72,28 @@ export default {
 
                 // 热点新闻
                 this.news = res.newslist[0].news;
+
+                // 全国数据统计
+                this.covNum = {
+                    modifyTime: data.modifyTime,
+                    currentConfirmedIncr: data.currentConfirmedIncr,
+                    currentConfirmedCount: data.currentConfirmedCount,
+
+                    suspectedIncr: data.suspectedIncr,
+                    suspectedCount: data.suspectedCount,
+
+                    seriousIncr: data.seriousIncr,
+                    seriousCount: data.seriousCount,
+
+                    confirmedIncr: data.confirmedIncr,
+                    confirmedCount: data.confirmedCount,
+
+                    deadIncr: data.deadIncr,
+                    deadCount: data.deadCount,
+
+                    curedIncr: data.curedIncr,
+                    curedCount: data.curedCount,
+                };
             });
         },
     },
