@@ -63,6 +63,8 @@ export default {
     }
     .hot {
         padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        border-bottom: 1px solid #ddd;
         .list {
             .item {
                 line-height: 0.6rem;

@@ -3,7 +3,35 @@
         <!-- 1.图片 -->
         <div class="banner">
             <img src="@/assets/images/1.jpg" style="width: 100%" alt="" />
+            <!-- 热点信息 -->
             <HomeCovInfo :covInfo="covInfo" :news="news"></HomeCovInfo>
+            <!-- 导航 -->
+            <ul class="list">
+                <li class="item">
+                    <router-link to="area">
+                        <img src="@/assets/images/1.png" alt="" />
+                        <div>风险地区</div>
+                    </router-link>
+                </li>
+                <li class="item">
+                    <router-link to="hesuan">
+                        <img src="@/assets/images/2.png" alt="" />
+                        <div>核酸检测</div>
+                    </router-link>
+                </li>
+                <li class="item">
+                    <router-link to="prevent">
+                        <img src="@/assets/images/3.png" alt="" />
+                        <div>防疫物资</div>
+                    </router-link>
+                </li>
+                <li class="item">
+                    <router-link to="travel">
+                        <img src="@/assets/images/4.png" alt="" />
+                        <div>出行政策</div>
+                    </router-link>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
@@ -44,3 +72,15 @@ export default {
     },
 };
 </script>
+<style lang="less" scoped>
+.list {
+    display: flex;
+    .item {
+        flex: 1;
+        text-align: center;
+        img {
+            width: 0.8rem;
+        }
+    }
+}
+</style>
