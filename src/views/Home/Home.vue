@@ -3,46 +3,48 @@
         <div class="banner">
             <!-- 图片 -->
             <img src="@/assets/images/1.jpg" style="width: 100%" alt="" />
-            <!-- 热点信息 -->
-            <HomeCovInfo :covInfo="covInfo" :news="news"></HomeCovInfo>
-            <!-- 导航 -->
-            <ul class="list">
-                <li class="item">
-                    <router-link to="area">
-                        <img src="@/assets/images/1.png" alt="" />
-                        <div>风险地区</div>
-                    </router-link>
-                </li>
-                <li class="item">
-                    <router-link to="hesuan">
-                        <img src="@/assets/images/2.png" alt="" />
-                        <div>核酸检测</div>
-                    </router-link>
-                </li>
-                <li class="item">
-                    <router-link to="prevent">
-                        <img src="@/assets/images/3.png" alt="" />
-                        <div>防疫物资</div>
-                    </router-link>
-                </li>
-                <li class="item">
-                    <router-link to="travel">
-                        <img src="@/assets/images/4.png" alt="" />
-                        <div>出行政策</div>
-                    </router-link>
-                </li>
-            </ul>
-
-            <!-- 全国风险 -->
-            <HomeCovNum :covNum="covNum"></HomeCovNum>
-
-            <!-- 国内疫情 -->
-            <ChildMap></ChildMap>
-            <!-- 世界疫情 -->
-            <WorldMap></WorldMap>
-            <!-- 轮播图 -->
-            <Swiper></Swiper>
+            <!-- 城市列表 -->
+            <router-link to="/selectcity" class="select">{{ city }}疫情</router-link>
         </div>
+        <!-- 热点信息 -->
+        <HomeCovInfo :covInfo="covInfo" :news="news"></HomeCovInfo>
+        <!-- 导航 -->
+        <ul class="list">
+            <li class="item">
+                <router-link to="area">
+                    <img src="@/assets/images/1.png" alt="" />
+                    <div>风险地区</div>
+                </router-link>
+            </li>
+            <li class="item">
+                <router-link to="hesuan">
+                    <img src="@/assets/images/2.png" alt="" />
+                    <div>核酸检测</div>
+                </router-link>
+            </li>
+            <li class="item">
+                <router-link to="prevent">
+                    <img src="@/assets/images/3.png" alt="" />
+                    <div>防疫物资</div>
+                </router-link>
+            </li>
+            <li class="item">
+                <router-link to="travel">
+                    <img src="@/assets/images/4.png" alt="" />
+                    <div>出行政策</div>
+                </router-link>
+            </li>
+        </ul>
+
+        <!-- 全国风险 -->
+        <HomeCovNum :covNum="covNum"></HomeCovNum>
+
+        <!-- 国内疫情 -->
+        <ChildMap></ChildMap>
+        <!-- 世界疫情 -->
+        <WorldMap></WorldMap>
+        <!-- 轮播图 -->
+        <Swiper></Swiper>
     </div>
 </template>
 
@@ -61,9 +63,12 @@ export default {
             covInfo: {},
             news: [],
             covNum: {},
+            city: '国内',
         };
     },
     created() {
+        // 取城市名称
+        this.city = localStorage.getItem('city');
         this.getData();
     },
     methods: {
@@ -111,6 +116,19 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.banner {
+    position: relative;
+    .select {
+        position: absolute;
+        top: 0.3rem;
+        right: 0.2rem;
+        background: rgba(34, 5, 5, 0.2);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 0.1rem;
+    }
+}
+
 .list {
     display: flex;
     .item {

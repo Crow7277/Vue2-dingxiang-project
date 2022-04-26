@@ -260,7 +260,7 @@ const install = function (Vue, options) {
                         myChart.setOption(option);
                     },
                     //5. 城市地图
-                    cityMap(id, cityName, data) {
+                    cityMap(id, cityname, data) {
                         var myChart = echarts.init(document.getElementById(id));
                         var option = {
                             tooltip: {
@@ -312,7 +312,7 @@ const install = function (Vue, options) {
                                 {
                                     name: '市',
                                     type: 'map', //地图
-                                    map: cityName, //中国地图
+                                    map: cityname, //中国地图
                                     roam: false,
                                     zoom: 1.2,
                                     aspectScale: 0.75,
@@ -348,6 +348,7 @@ const install = function (Vue, options) {
                     },
                 };
             },
+            set() {},
         },
     });
 };

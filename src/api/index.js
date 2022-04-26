@@ -71,3 +71,12 @@ export const getTravelQuery = params => {
         params,
     });
 };
+
+
+/**
+ *
+ * @returns 城市列表
+ */
+ export const getCityList = () => {
+    return elseAjax.get(base.selectCity);
+};

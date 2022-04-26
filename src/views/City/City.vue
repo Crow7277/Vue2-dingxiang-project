@@ -19,10 +19,11 @@ export default {
                 let citys = res.subList;
                 citys.forEach(item => {
                     let obj = {};
-                    obj.name = item.city;
+                    obj.name = item.city + '市';
                     obj.value = item.confirm;
                     arr.push(obj);
                 });
+                console.log(arr);
                 this.$myChart.cityMap('main', this.cityName, arr);
             } catch (error) {
                 this.$myChart.cityMap('main', this.cityName, []);

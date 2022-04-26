@@ -23,4 +23,6 @@ export default {
 
     travel: '/api/springTravel/citys?key=25309d1d363848790921460a73866c0c',
     travelQuery: '/api/springTravel/query?key=25309d1d363848790921460a73866c0c', //城市疫情&from=10191&to=10349
+
+    selectCity: '/foo/aj/getcitycode',
 };

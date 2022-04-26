@@ -8,6 +8,7 @@ const Hesuan = () => import('@/views/Hesuan/Hesuan.vue');
 const Prevent = () => import('@/views/Prevent/Prevent.vue');
 const Travel = () => import('@/views/Travel/Travel.vue');
 const City = () => import('@/views/City/City.vue');
+const SelectCity = () => import('@/views/selectCity/SelectCity.vue');
 Vue.use(VueRouter);
 
 const routes = [
@@ -40,6 +41,12 @@ const routes = [
         path: '/city/:cityName',
         name: 'City',
         component: City,
+        props: true,
+    },
+    {
+        path: '/selectcity',
+        name: 'SelectCity',
+        component: SelectCity,
         props: true,
     },
 ];
