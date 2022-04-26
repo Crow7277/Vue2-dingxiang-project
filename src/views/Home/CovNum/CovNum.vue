@@ -81,7 +81,7 @@ export default {
         },
         // 千位数组分割
         divisionFilter(num) {
-            return num.toLocaleString();
+            return Object(num).toLocaleString();
         },
     },
 };
@@ -95,7 +95,7 @@ export default {
         background-color: #fff;
         padding: 0.3rem;
         color: #666;
-        border-radius: .2rem;
+        border-radius: 0.2rem;
         .title {
             font-size: 0.3rem;
         }
