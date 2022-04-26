@@ -37,9 +37,9 @@
             <HomeCovNum :covNum="covNum"></HomeCovNum>
 
             <!-- 国内疫情 -->
-            <!-- <ChildMap></ChildMap> -->
+            <ChildMap></ChildMap>
             <!-- 世界疫情 -->
-            <!-- <WorldMap></WorldMap> -->
+            <WorldMap></WorldMap>
             <!-- 轮播图 -->
             <Swiper></Swiper>
         </div>

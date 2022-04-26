@@ -25,7 +25,8 @@ service.interceptors.response.use(
         // 4. 配置进度条显示/隐藏
         // 关闭进度条
         Nprogress.done();
-        if (response.status === 200 && response.statusText === 'OK') return response.data;
+        console.log(response);
+        if (response.status === 200) return response.data;
         else return Promise.reject(response.status);
     },
     error => {

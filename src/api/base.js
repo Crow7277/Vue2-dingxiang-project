@@ -21,6 +21,6 @@ export default {
 
     swiperBanner: 'http://iwenwiki.com/wapicovid19/ncovimg.php', //轮播图疫情
 
-    travel: '/api/springTravel/citys?key=674d6ec65afc51339176339dc899e16e',
-    travelQuery: '/api/springTravel/query?key=674d6ec65afc51339176339dc899e16e', //城市疫情&from=10191&to=10349
+    travel: '/api/springTravel/citys?key=25309d1d363848790921460a73866c0c',
+    travelQuery: '/api/springTravel/query?key=25309d1d363848790921460a73866c0c', //城市疫情&from=10191&to=10349
 };

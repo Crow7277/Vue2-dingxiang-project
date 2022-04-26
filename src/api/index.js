@@ -53,3 +53,21 @@ export const getCityData = city_name => {
 export const getSwiperData = () => {
     return elseAjax.get(base.swiperBanner);
 };
+
+/**
+ *
+ * @returns 查询出行数据
+ */
+export const getTravelData = () => {
+    return elseAjax.get(base.travel);
+};
+
+/**
+ *
+ * @returns 出行城市政策查询
+ */
+export const getTravelQuery = params => {
+    return elseAjax.get(base.travelQuery, {
+        params,
+    });
+};
