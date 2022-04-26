@@ -64,7 +64,9 @@
 export default {
     name: 'CovNum',
     props: {
-        covNum: Object,
+        covNum: {
+            type: Object,
+        },
     },
     // 过滤器
     filters: {

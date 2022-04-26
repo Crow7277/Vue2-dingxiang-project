@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home/Home.vue';
+const Home = () => import('@/views/Home/Home.vue');
 
 // 异步组件
 const Area = () => import('@/views/Area/Area.vue');
 const Hesuan = () => import('@/views/Hesuan/Hesuan.vue');
 const Prevent = () => import('@/views/Prevent/Prevent.vue');
 const Travel = () => import('@/views/Travel/Travel.vue');
+const City = () => import('@/views/City/City.vue');
 Vue.use(VueRouter);
 
 const routes = [
@@ -35,8 +36,13 @@ const routes = [
         name: 'Travel',
         component: Travel,
     },
+    {
+        path: '/city/:cityName',
+        name: 'City',
+        component: City,
+        props: true,
+    },
 ];
-
 const router = new VueRouter({
     routes,
 });

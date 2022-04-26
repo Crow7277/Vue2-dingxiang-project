@@ -35,6 +35,11 @@
 
             <!-- 全国风险 -->
             <HomeCovNum :covNum="covNum"></HomeCovNum>
+
+            <!-- 国内疫情 -->
+            <ChildMap></ChildMap>
+            <!-- 世界疫情 -->
+            <WorldMap></WorldMap>
         </div>
     </div>
 </template>
@@ -43,9 +48,11 @@
 import { getCovInfo } from '@/api/index.js';
 import HomeCovInfo from './Covinfo/CovInfo';
 import HomeCovNum from './CovNum/CovNum.vue';
+import ChildMap from './ECharts/ChildMap.vue';
+import WorldMap from './ECharts/WorldMap.vue';
 export default {
     name: 'Home',
-    components: { HomeCovInfo, HomeCovNum },
+    components: { HomeCovInfo, HomeCovNum, ChildMap, WorldMap },
     data() {
         return {
             covInfo: {},
@@ -59,41 +66,42 @@ export default {
     methods: {
         getData() {
             getCovInfo().then(res => {
-                console.log(res);
-                let data = res.newslist[0].desc;
-                this.covInfo = {
-                    note1: data.note1,
-                    note2: data.note2,
-                    note3: data.note3,
-                    remark1: data.remark1,
-                    remark2: data.remark2,
-                    remark3: data.remark3,
-                };
+                this.$nextTick(() => {
+                    let data = res.newslist[0].desc;
+                    this.covInfo = {
+                        note1: data.note1,
+                        note2: data.note2,
+                        note3: data.note3,
+                        remark1: data.remark1,
+                        remark2: data.remark2,
+                        remark3: data.remark3,
+                    };
 
-                // 热点新闻
-                this.news = res.newslist[0].news;
+                    // 热点新闻
+                    this.news = res.newslist[0].news;
 
-                // 全国数据统计
-                this.covNum = {
-                    modifyTime: data.modifyTime,
-                    currentConfirmedIncr: data.currentConfirmedIncr,
-                    currentConfirmedCount: data.currentConfirmedCount,
+                    // 全国数据统计
+                    this.covNum = {
+                        modifyTime: data.modifyTime,
+                        currentConfirmedIncr: data.currentConfirmedIncr,
+                        currentConfirmedCount: data.currentConfirmedCount,
 
-                    suspectedIncr: data.suspectedIncr,
-                    suspectedCount: data.suspectedCount,
+                        suspectedIncr: data.suspectedIncr,
+                        suspectedCount: data.suspectedCount,
 
-                    seriousIncr: data.seriousIncr,
-                    seriousCount: data.seriousCount,
+                        seriousIncr: data.seriousIncr,
+                        seriousCount: data.seriousCount,
 
-                    confirmedIncr: data.confirmedIncr,
-                    confirmedCount: data.confirmedCount,
+                        confirmedIncr: data.confirmedIncr,
+                        confirmedCount: data.confirmedCount,
 
-                    deadIncr: data.deadIncr,
-                    deadCount: data.deadCount,
+                        deadIncr: data.deadIncr,
+                        deadCount: data.deadCount,
 
-                    curedIncr: data.curedIncr,
-                    curedCount: data.curedCount,
-                };
+                        curedIncr: data.curedIncr,
+                        curedCount: data.curedCount,
+                    };
+                });
             });
         },
     },
