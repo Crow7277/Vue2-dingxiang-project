@@ -37,9 +37,11 @@
             <HomeCovNum :covNum="covNum"></HomeCovNum>
 
             <!-- 国内疫情 -->
-            <ChildMap></ChildMap>
+            <!-- <ChildMap></ChildMap> -->
             <!-- 世界疫情 -->
-            <WorldMap></WorldMap>
+            <!-- <WorldMap></WorldMap> -->
+            <!-- 轮播图 -->
+            <Swiper></Swiper>
         </div>
     </div>
 </template>
@@ -50,9 +52,10 @@ import HomeCovInfo from './Covinfo/CovInfo';
 import HomeCovNum from './CovNum/CovNum.vue';
 import ChildMap from './ECharts/ChildMap.vue';
 import WorldMap from './ECharts/WorldMap.vue';
+import Swiper from './Swiper/Swiper.vue';
 export default {
     name: 'Home',
-    components: { HomeCovInfo, HomeCovNum, ChildMap, WorldMap },
+    components: { HomeCovInfo, HomeCovNum, ChildMap, WorldMap, Swiper },
     data() {
         return {
             covInfo: {},

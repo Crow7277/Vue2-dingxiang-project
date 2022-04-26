@@ -4,6 +4,7 @@
 import ajax from './ajax';
 import base from './base';
 import digAjax from './digAjax';
+import elseAjax from './elseAjax';
 import md5 from 'md5-js';
 
 /**
@@ -43,4 +44,12 @@ export const getCityData = city_name => {
     return digAjax.get(
         base.baseUrl + base.city + `?format=json&city_name=${city_name}&appid=16636&sign=${Str}`
     );
+};
+
+/**
+ *
+ * @returns 获取轮播图数据
+ */
+export const getSwiperData = () => {
+    return elseAjax.get(base.swiperBanner);
 };

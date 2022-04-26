@@ -5,6 +5,11 @@ import '@/assets/css/reset.css';
 import '@/assets/js/phone';
 import '@/plugins/vant';
 import echarts from './plugins/echarts';
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// import style
+import 'swiper/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 Vue.use(echarts);
 
 Vue.config.productionTip = false;

@@ -18,4 +18,9 @@ export default {
     // 此时为武汉的城市数据，其中city_name是使用md5加密后的数据
     // 因此我们需要得md5加密后数据才可以获取所有的城市信息，不然需要一个一个的获取
     city: 'api/94/221',
+
+    swiperBanner: 'http://iwenwiki.com/wapicovid19/ncovimg.php', //轮播图疫情
+
+    travel: '/api/springTravel/citys?key=674d6ec65afc51339176339dc899e16e',
+    travelQuery: '/api/springTravel/query?key=674d6ec65afc51339176339dc899e16e', //城市疫情&from=10191&to=10349
 };
