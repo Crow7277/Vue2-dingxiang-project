@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from './router';
 import '@/assets/css/reset.css';
 import '@/assets/js/phone';
+import '@/plugins/vant';
 
 Vue.config.productionTip = false;
 
